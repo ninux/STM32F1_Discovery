@@ -34,4 +34,3 @@ int main(void)
 		write_string("> Baud reset to 9600", 0x00, 0x13, 0x03, 0xFF, 0xFF);
 
 }
-
