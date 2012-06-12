@@ -1,10 +1,10 @@
 /* ----------------------------------------------------------------------------
 * main.c
-* Author: Nino Ninux
-* Mail: nino.ninux@gmail.com
-* Target: STM32F100RB Discovery
-* Version: V0.2
-* Description:
+* Author: 	Nino Ninux
+* Mail:		nino.ninux@gmail.com 
+* Target: 	STM32F100RB Discovery
+* Version: 	-	
+* Description:	
 ---------------------------------------------------------------------------- */
 
 #include "stm32f10x.h"
