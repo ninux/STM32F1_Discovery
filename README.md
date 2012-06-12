@@ -1,30 +1,37 @@
 STM32F1_Discovery
 =================
 
-This is a "get in touch with" project for the stm32f100 MCU nested in the discovery board.
+This is a "get in touch with" project for the stm32f100 MCU nested in the 
+discovery board. For further information on the board go to: 
+
+	http://www.st.com/internet/evalboard/product/250863.jsp
 
 Goals
 
-    The main goal is to get in touch with the stm32f100 and CooCox CoIDE. 
+    The primary goal is to get in touch with the stm32f100 and CooCox CoIDE. 
     There are also specific software interest like
         
         - General Purpose of the uController (Timers, Interrupts... )
         - UART (or USART) communications
         - In-Application-Programming (IAP) with I/O Peripherals like USART...
+		
+	After evaluation of the internals, there will be also an evaluation on the 
+	hardware. If everythings going on well, there will be an selfmadeboard 
+	based on the stm23f1xx. There is also an interest to run a selfmade basic
+	vm on the MCU.
 
 Current stats on SW Development
 
     OK  Initializing the general functions of the MCU (clock settings)
     OK  Sending data from the MCU to USART
-    CD  Recieving data to the MCU (~60% done)
-    ND  Interrupt Init and handling
-    ND  Timersettings
-    
+	OK	Receiving data from USART to MCU per Interrupt
+	CD	Initialise and run ISR (Interrupt Sevice Routines) [30% developed yet]
+    ND  Timers (Init, Interrupt etc.)
+
     Indexes
         OK = get it work
         CD = currently on development
         ND = not developed yet but in agenda
-
         
 Configuration for current development/debugging/testing
 
@@ -34,19 +41,21 @@ Configuration for current development/debugging/testing
     USB/Serial:         CP2102
     Board-External I/O: 4D Systems 3.2" uLCD SGC
     Digital-Analyzer:   DigiView TechTools Logic Analyzer DV1-100 (18 Channel)
-    
+
     The main setting to develop and test the source is like this:
-    
-    ---------       ----------------------       -----------
-    | PC    |  USB  |       |STM32       |  PWR  | 4D      |
-    |       |--->---|ST-Link|Discovery   |--->---| Systems |
-    |       |  CP   |       |            | Rx/Tx | 3.2"    |
-    |       |---<---|                    |--->---| uLCD    |
-    ---------       ----------------------       -----------
-    
+
+	 _______		 _____________________		   _________
+    /		\       /		  | 		  \       /		    \
+    | PC    |  USB  |         |STM32      |  PWR  | 4D      |
+    |       |--->---| ST-Link |Discovery  |--->---| Systems |
+    |       |  CP   |         |           | Rx/Tx | 3.2"    |
+    |       |---<---|         |           |---><--| uLCD    |
+    \_______/       \_________|___________/       \_________/
+		
+ 
 Developers
 
-    Current developer is Nino Ninux.
-    For any informations/questions contact nino.ninux@gmail.com
-
-
+    Primary developer is Nino Ninux.
+    For further information or questions contact him on this e-mail:
+	
+		nino.ninux@gmail.com
