@@ -37,6 +37,7 @@ Configuration for current development/debugging/testing
 
     OS:                 Windows, XP, SP3
     IDE:                CooCox CoIDE (Version: 1.4.1, Build id: 20120401-1336)
+	Terminal:			Tera Term
     Toolchain:          arm-none-eabi-gcc
     USB/Serial:         CP2102
     Board-External I/O: 4D Systems 3.2" uLCD SGC
