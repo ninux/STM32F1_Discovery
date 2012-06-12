@@ -41,6 +41,7 @@ Configuration for current development/debugging/testing
     USB/Serial:         CP2102
     Board-External I/O: 4D Systems 3.2" uLCD SGC
     Digital-Analyzer:   DigiView TechTools Logic Analyzer DV1-100 (18 Channel)
+	Coming soon:		RIGOL DS1052E Digital Storage Oscilloscope
 
     The main setting to develop and test the source is like this:
 
@@ -49,9 +50,19 @@ Configuration for current development/debugging/testing
     | PC    |  USB  |         |STM32      |  PWR  | 4D      |
     |       |--->---| ST-Link |Discovery  |--->---| Systems |
     |       |  CP   |         |           | Rx/Tx | 3.2"    |
-    |       |---<---|         |           |---><--| uLCD    |
-    \_______/       \_________|___________/       \_________/
-		
+    |       |-<-x   |         |           |-->x<--| uLCD    |
+    \_______/   |   \_________|___________/   |   \_________/
+				|							  |	
+				|__________(optional!)________|
+				
+	The connection from the Rx/Tx lines between 4D Sytems uLCD and the STM32
+	board is not "that" good for debugging the Rx/Tx signals with the CP2102
+	because of the signal voltage level differences between them. If the 
+	CP2102 is connected to these lines it will disable the Tx of the 4D Systems 
+	Display. So in short:
+	
+		IF THE CP2102 IS CONNECTED TO THE RX/TX BETWEEN 4D AND STM32,
+		THEN THE TX OF 4D IS DISABLED (neither able to enable nor detect)
  
 Developers
 
